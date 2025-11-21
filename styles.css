@@ -276,11 +276,11 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     background-image: url('img/slider_inicio.jpg');
-    background-size: contain;                 /* Mostrar la imagen completa */
-    background-position: center 22%;         /* Subir aún más la imagen */
+    background-size: contain;                /* Mostrar la imagen casi completa, sin tanto zoom */
+    background-position: center 15%;         /* Bajar la imagen aproximadamente un 15% */
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: #111;             /* Color de fondo de relleno */
+    background-color: transparent;      /* Que herede el fondo claro, sin banda negra */
     z-index: 0;
     filter: brightness(0.85) contrast(1.1);
 }
@@ -314,7 +314,14 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.35);
+    /* Degradado: más oscuro arriba, casi transparente abajo para evitar un bloque negro */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0.25) 40%,
+        rgba(0, 0, 0, 0.05) 80%,
+        transparent 100%
+    );
     z-index: 1;
 }
 
@@ -1801,6 +1808,12 @@ h1, h2, h3, h4, h5, h6 {
 
     .hero-top {
         padding: 4rem 0 3rem;
+    }
+
+    /* Ajustar fondo del hero en pantallas medianas/pequeñas para evitar franjas negras */
+    .hero-pattern {
+        background-size: cover;
+        background-position: center center;
     }
 
     .hero-title {
