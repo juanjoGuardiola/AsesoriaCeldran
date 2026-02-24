@@ -263,6 +263,31 @@ document.addEventListener('DOMContentLoaded', () => {
         script.src = 'https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js';
         document.head.appendChild(script);
     }
+
+    // Regularización 2026 highlight banner
+    const regularizacionBanner = document.getElementById('regularizacionBanner');
+    const regularizacionClose = document.getElementById('regularizacionBannerClose');
+    const regularizacionCta = document.getElementById('regularizacionBannerCta');
+
+    if (regularizacionBanner) {
+        const dismissed = localStorage.getItem('regularizacion2026_dismissed_v2') === 'true';
+        if (dismissed) {
+            regularizacionBanner.classList.add('hidden');
+        }
+
+        const dismiss = () => {
+            regularizacionBanner.classList.add('hidden');
+            localStorage.setItem('regularizacion2026_dismissed_v2', 'true');
+        };
+
+        if (regularizacionClose) {
+            regularizacionClose.addEventListener('click', dismiss);
+        }
+
+        if (regularizacionCta) {
+            regularizacionCta.addEventListener('click', dismiss);
+        }
+    }
 });
 
 // Service card hover effects enhancement

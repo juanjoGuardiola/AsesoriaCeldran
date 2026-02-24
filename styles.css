@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar {
-    padding: 1rem 0;
+    padding: 0.6rem 0;
 }
 
 .nav-wrapper {
@@ -113,18 +113,22 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0.75rem;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.05rem;
     color: var(--primary-color);
 }
 
 .logo-img {
-    height: 50px;
+    height: 40px;
     width: auto;
     object-fit: contain;
 }
 
 .logo-text {
     font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .nav-menu {
@@ -138,6 +142,8 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 500;
+    font-size: 0.95rem;
+    white-space: nowrap;
     transition: var(--transition);
     position: relative;
     padding: 0.5rem 0;
@@ -791,6 +797,14 @@ h1, h2, h3, h4, h5, h6 {
     gap: 2rem;
 }
 
+.services-grid.services-grid-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    margin: 2rem auto 0;
+}
+
 .service-card {
     background: var(--bg-white);
     padding: 2.5rem;
@@ -830,7 +844,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .service-description {
     color: var(--text-light);
-    line-height: 1.8;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 /* Servicios - Desarrollo completo */
@@ -849,6 +864,88 @@ h1, h2, h3, h4, h5, h6 {
 .services-intro p {
     color: var(--text-light);
     font-size: 1.05rem;
+}
+
+.regularizacion-banner {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    max-width: 360px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: var(--bg-white);
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    padding: 1.2rem 1.4rem 1.25rem;
+    z-index: 1200;
+    animation: regularizacionSlideUp 0.4s ease-out;
+}
+
+.regularizacion-banner.hidden {
+    display: none;
+}
+
+.regularizacion-banner-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.4rem;
+}
+
+.regularizacion-badge {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.regularizacion-banner-close {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+}
+
+.regularizacion-banner p {
+    margin: 0 0 0.9rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.regularizacion-banner-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    background: var(--bg-white);
+    color: var(--primary-dark);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.regularizacion-banner-btn:hover {
+    background: #f5f5f5;
+}
+
+@keyframes regularizacionSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .services-detail-grid {
@@ -1253,6 +1350,76 @@ h1, h2, h3, h4, h5, h6 {
     color: rgba(255, 255, 255, 0.9);
 }
 
+/* Extranjería Section */
+.extranjeria-section {
+    padding: 5rem 0;
+    background: var(--bg-white);
+}
+
+.extranjeria-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.extranjeria-card {
+    background: var(--bg-light);
+    border-radius: 18px;
+    padding: 2.25rem 2.5rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.extranjeria-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+}
+
+.extranjeria-card h4 {
+    font-size: 1.05rem;
+    margin: 1.5rem 0 0.75rem;
+    color: var(--text-dark);
+}
+
+.extranjeria-card p {
+    margin-bottom: 0.75rem;
+}
+
+.extranjeria-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem;
+}
+
+.extranjeria-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.35rem;
+    color: var(--text-dark);
+}
+
+.extranjeria-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.extranjeria-highlight {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.extranjeria-cta {
+    margin-top: 1.5rem;
+    font-weight: 500;
+    color: var(--primary-dark);
+}
+
 /* Team Section */
 .team-section {
     padding: 5rem 0;
@@ -1359,6 +1526,11 @@ h1, h2, h3, h4, h5, h6 {
     object-position: center top;
 }
 
+.elena-photo img {
+    /* Ajuste fino para centrar mejor a Elena dentro del círculo */
+    object-position: 40% 20%;
+}
+
 .team-member-info {
     padding: 0;
     text-align: center;
@@ -1447,20 +1619,31 @@ h1, h2, h3, h4, h5, h6 {
 
 .team-values {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 4rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 3rem;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .value-card {
     text-align: center;
-    padding: 2rem;
+    padding: 1rem 1.25rem 1.1rem;
+    background: var(--bg-white);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .value-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 0.6rem;
     background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
     border-radius: 50%;
     display: flex;
@@ -1482,6 +1665,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .value-card p {
     color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
 }
 
 .team-success {
@@ -1969,6 +2155,10 @@ h1, h2, h3, h4, h5, h6 {
         transition: var(--transition);
     }
 
+    .nav-link {
+        font-size: 1rem;
+    }
+
     .nav-menu.active {
         left: 0;
     }
@@ -2014,7 +2204,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .about-content-grid,
-    .campaign-content {
+    .campaign-content,
+    .extranjeria-content {
         grid-template-columns: 1fr;
     }
 
@@ -2043,8 +2234,17 @@ h1, h2, h3, h4, h5, h6 {
         padding: 3rem 0;
     }
 
-    .services-grid {
+    .services-grid,
+    .services-grid.services-grid-bottom,
+    .team-values {
         grid-template-columns: 1fr;
+    }
+
+    .regularizacion-banner {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        max-width: none;
     }
 }
 
